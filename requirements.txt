@@ -1,5 +1,5 @@
 hypercorn
 fastapi
-python-multipart
 pytest
 requests
+python-multipart

@@ -9,9 +9,6 @@ client = TestClient(app)
 
 
 def test_upload_file_without_extension():
-    # with open("data.csv") as f:
-    #     response = client.post("/files", files={"file": ("data.csv", f)})
-        # print(f)
     response = client.post(
         "/files", files={'data_file': open('Testing_CSV_File/datacsv', 'rb')}
     )
@@ -53,7 +50,7 @@ def test_upload_csv_file_without_data():
 
 def test_upload_csv_file_with_data():
     response = client.post(
-        "/files", files={'data_file': open('Testing_CSV_File/data.csv', 'rb')}
+        "/files", files={'data_file': open('CSV_File/data.csv', 'rb')}
     )
     
     assert response.status_code == 200
