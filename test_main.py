@@ -13,7 +13,7 @@ def test_upload_file_without_extension():
     #     response = client.post("/files", files={"file": ("data.csv", f)})
         # print(f)
     response = client.post(
-        "/files", files={'data_file': open('CSV_File/datacsv', 'rb')}
+        "/files", files={'data_file': open('Testing_CSV_File/datacsv', 'rb')}
     )
     
     assert response.status_code == 200
@@ -26,7 +26,7 @@ def test_upload_file_without_extension():
 
 def test_upload_file_diff_extension():
     response = client.post(
-        "/files", files={'data_file': open('CSV_File/data.txt', 'rb')}
+        "/files", files={'data_file': open('Testing_CSV_File/data.txt', 'rb')}
     )
     
     assert response.status_code == 200
@@ -39,7 +39,7 @@ def test_upload_file_diff_extension():
 
 def test_upload_csv_file_without_data():
     response = client.post(
-        "/files", files={'data_file': open('CSV_File/data_header_only.csv', 'rb')}
+        "/files", files={'data_file': open('Testing_CSV_File/data_header_only.csv', 'rb')}
     )
     
     assert response.status_code == 200
@@ -53,7 +53,7 @@ def test_upload_csv_file_without_data():
 
 def test_upload_csv_file_with_data():
     response = client.post(
-        "/files", files={'data_file': open('CSV_File/data.csv', 'rb')}
+        "/files", files={'data_file': open('Testing_CSV_File/data.csv', 'rb')}
     )
     
     assert response.status_code == 200
